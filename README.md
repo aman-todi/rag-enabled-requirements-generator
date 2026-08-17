@@ -1,8 +1,8 @@
 # Simulink Requirements Generator
 
-An internal chat-style tool that turns a short prompt (e.g. *"write complete testable
-requirements for an RC filter module"*) into a set of embedded-software requirements formatted
-according to the internal requirements-writing guide, using a retrieval-augmented (RAG) chat model
+An chat-style tool that turns a short prompt (e.g. *"write complete testable
+requirements for an RC filter module"*) into a set of testable embedded-software requirements formatted
+according to a proprietary requirements-writing guide, using a retrieval-augmented (RAG) chat model
 deployed in Microsoft Foundry.
 
 This repository contains the web app only: an ASP.NET Core backend that calls the already-deployed
