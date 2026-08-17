@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": { "value": "reqgen-embedded" },
+    "appServicePlanSku": { "value": "P1v3" },
+    "entraClientId": { "value": "<app-registration-client-id>" },
+    "entraTenantId": { "value": "<entra-tenant-id>" },
+    "foundryEndpoint": { "value": "https://<your-foundry-resource>.services.ai.azure.com/" },
+    "foundryDeploymentName": { "value": "<deployment-name>" },
+    "foundryAccountName": { "value": "<foundry-account-resource-name>" },
+    "foundryResourceGroupName": { "value": "<foundry-resource-group>" },
+    "vnetIntegrationSubnetId": { "value": "" }
+  }
+}

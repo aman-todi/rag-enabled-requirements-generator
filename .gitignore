@@ -1,0 +1,29 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+
+# ASP.NET Core static web assets pulled in from the client build
+src/Server/wwwroot/
+
+# Node / Vite
+node_modules/
+dist/
+*.tsbuildinfo
+npm-debug.log*
+
+# Environment files (never commit real secrets/endpoints)
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vs/
+.vscode/
+.idea/
+.DS_Store
+
+# Azure deployment artifacts
+*.zip
+.azure/
