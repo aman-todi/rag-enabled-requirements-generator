@@ -50,6 +50,9 @@ docs/       Architecture and Azure configuration reference
 infra/      Bicep templates for the App Service + identity + auth
 ```
 
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md#repository-layout) for the full file tree with a
+note on every tracked file.
+
 ## Configuration
 
 The app reads configuration from ASP.NET Core's standard sources (`appsettings.json` →
