@@ -62,7 +62,7 @@ export default function App() {
         <RequirementsOutput text={output} isStreaming={isStreaming} error={error} />
       </main>
       <footer className="app__footer">
-        Requirements are generated from the internal Simulink requirements-writing guide via a
+        Requirements are generated based on an internal Simulink requirements-writing guide via a
         retrieval-augmented Microsoft Foundry model deployment. Review before use.
       </footer>
     </div>
