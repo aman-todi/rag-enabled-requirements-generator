@@ -61,36 +61,11 @@ the standard enterprise pattern is:
 
 ## Repository layout
 
-```
-.
-├── README.md                  # Config / build / publish steps for Azure App Service
-├── .env.example                # All environment variables the app reads, documented
-├── docs/
-│   ├── ARCHITECTURE.md         # This file
-│   └── AZURE_SETUP.md          # Azure-side configuration: identity, RBAC, VNet, Entra ID
-├── infra/
-│   └── main.bicep              # App Service + managed identity + Easy Auth (IaC reference)
-└── src/
-    ├── Server/                 # ASP.NET Core Web API (.NET 10)
-    │   ├── Program.cs          # Host setup, static file + SPA fallback wiring
-    │   ├── Controllers/
-    │   │   ├── RequirementsController.cs  # POST /api/requirements/generate (SSE stream)
-    │   │   └── UserController.cs          # GET  /api/user/me (reads Easy Auth headers)
-    │   ├── Services/
-    │   │   ├── IFoundryChatService.cs
-    │   │   └── FoundryChatService.cs      # Calls Foundry via Azure.AI.OpenAI + DefaultAzureCredential
-    │   ├── Options/
-    │   │   └── FoundryOptions.cs          # Bound from "Foundry" config section / env vars
-    │   ├── Models/
-    │   │   └── RequirementsModels.cs
-    │   └── wwwroot/                       # React production build lands here (git-ignored)
-    └── client/                 # React + TypeScript (Vite)
-        ├── vite.config.ts      # outDir -> ../Server/wwwroot, dev proxy -> ASP.NET Core
-        └── src/
-            ├── App.tsx
-            ├── api/requirementsApi.ts     # fetch + SSE parsing, /api/user/me
-            └── components/                # PromptComposer, RequirementsOutput, AppHeader
-```
+See the [README's Repository layout](../README.md#repository-layout) for the full file tree with
+a comment on every tracked file — kept in one place so it doesn't drift out of sync with itself.
+The short version: `src/Server` is the ASP.NET Core Web API (Controllers/Services/Options/Models),
+`src/client` is the React+TS frontend that builds into `src/Server/wwwroot`, `docs/` holds this
+file and the Azure setup guide, and `infra/` holds the reference Bicep.
 
 ## Key decisions and alternatives considered
 
